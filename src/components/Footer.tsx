@@ -1,11 +1,22 @@
+'use client';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <footer className="bg-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-20">
-        {/* Grid Layout - 3 columns */}
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-20"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-          {/* Column 1 - Contact Info */}
           <div className="text-[#2E3F1F]">
             <h2 className="text-3xl lg:text-4xl font-serif mb-8 lg:mb-10">
               Dr. Maya Reynolds, PsyD
@@ -50,7 +61,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom Section - Legal & Credits */}
       <div className="bg-[#E8DDD4] py-12 lg:py-16">

@@ -14,9 +14,9 @@ const Hero = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="bg-white min-h-screen px-13 py-27"
+      className="bg-white min-h-screen px-6 sm:px-8 lg:px-16 lg:py-24"
     >
-      <div className="container mx-auto px-6 lg:px-22 grid lg:grid-cols-2 gap-0 items-center min-h-screen">
+      <div className="container mx-auto px-6 lg:px-18 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center ">
         {/* Left side - Image */}
         <div className="flex justify-center lg:justify-start py-12 lg:py-0">
           <div className="w-full max-w-[400px] lg:max-w-[500px]">
@@ -24,7 +24,7 @@ const Hero = () => {
               src="/bouquet.avif"
               width={600}
               height={600}
-              className="rounded-t-full w-full h-[800px] object-fit"
+              className="rounded-t-full w-full h-auto  object-cover"
               alt="Decorative flower bouquet"
             />
           </div>
@@ -32,7 +32,7 @@ const Hero = () => {
 
         {/* Right side - Content */}
         <div className="flex flex-col justify-center items-center py-12 lg:py-0 lg:pl-16">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#2E3F1F] leading-[1.05] mb-8">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#2E3F1F] leading-tight ">
             Live your life <br />
             in full bloom
           </h1>
